@@ -49,6 +49,9 @@ app.use(corse(corsOptions));
 app.use(passport.initialize());
 app.use(cookieParser()); //automattically parses the cookie
 //!---Route handlers
+app.get("/", (req, res) => {
+  res.json({ message: "Welcome to Masync Blog Project" });
+});
 app.use("/api/v1/posts", postRouter);
 app.use("/api/v1/users", usersRouter);
 app.use("/api/v1/categories", categoriesRouter);
